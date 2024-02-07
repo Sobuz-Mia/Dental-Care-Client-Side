@@ -1,3 +1,6 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url(https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Single+Day&display=swap);
+body{font-family:Roboto,sans-serif}
+.font-another{font-family:'Single Day',cursive}
