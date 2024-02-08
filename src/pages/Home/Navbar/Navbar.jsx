@@ -2,62 +2,62 @@ import { NavLink } from "react-router-dom";
 import logo1 from "../../../assets/logo-1.jpg";
 import { GiSelfLove } from "react-icons/gi";
 import { IoSearchOutline } from "react-icons/io5";
-import { Typewriter } from "react-simple-typewriter";
+// import { Typewriter } from "react-simple-typewriter";
 const Navbar = () => {
   const links = (
     <>
-      <li className="px-2">
+      <li className="px-2 text-md">
         <NavLink
           to={"/"}
-          className={(isActive) => (isActive ? "active" : "navLink")}
+          className={({ isActive }) => (isActive ? "text-[#22B2D8]" : "")}
         >
           Home
         </NavLink>
       </li>
-      <li className="px-2">
+      <li className="px-2 text-md">
         <NavLink
           to={"/services"}
-          className={(isActive) => (isActive ? "active" : "navLink")}
+          className={({ isActive }) => (isActive ? "text-[#22B2D8]" : "")}
         >
           Services
         </NavLink>
       </li>
-      <li className="px-2">
+      <li className="px-2  text-md">
         <NavLink
           to={"/pricing"}
-          className={(isActive) => (isActive ? "active" : "navLink")}
+          className={({ isActive }) => (isActive ? "text-[#22B2D8]" : "")}
         >
           Pricing
         </NavLink>
       </li>
-      <li className="px-2">
+      <li className="px-2 text-md">
         <NavLink
           to={"/branch"}
-          className={(isActive) => (isActive ? "active" : "navLink")}
+          className={({ isActive }) => (isActive ? "text-[#22B2D8]" : "")}
         >
           Branch
         </NavLink>
       </li>
-      <li className="px-2">
+      <li className="px-2 text-md">
         <NavLink
           to={"/medicine"}
-          className={(isActive) => (isActive ? "active" : "navLink")}
+          className={({ isActive }) => (isActive ? "text-[#22B2D8]" : "")}
         >
           Medicine
         </NavLink>
       </li>
-      <li className="px-2">
+      <li className="px-2 text-md">
         <NavLink
           to={"/blog"}
-          className={(isActive) => (isActive ? "active" : "navLink")}
+          className={({ isActive }) => (isActive ? "text-[#22B2D8]" : "")}
         >
           Blog
         </NavLink>
       </li>
-      <li className="px-2">
+      <li className="px-2 text-md">
         <NavLink
           to={"/contact"}
-          className={(isActive) => (isActive ? "active" : "navLink")}
+          className={({ isActive }) => (isActive ? "text-[#22B2D8]" : "")}
         >
           Contact Us
         </NavLink>
@@ -94,13 +94,14 @@ const Navbar = () => {
         <div className="text-center flex md:flex-col flex-row justify-center items-center">
           <img src={logo1} className="w-24 h-20" alt="" />
           <p className="text-sm flex flex-col italic font-bold -mt-2 font-another">
-            <Typewriter
+            {/* <Typewriter
               words={["Musa Dental Care"]}
               loop={0}
               typeSpeed={100}
               deleteSpeed={50}
               delaySpeed={1000}
-            />
+            /> */}
+            Musa Dental Care
             <span className="text-center font-normal hidden md:inline-block">
               since 2014
             </span>
@@ -117,7 +118,7 @@ const Navbar = () => {
       </div>
       <div className="navbar-end">
         <button className="btn bg-primary text-white hover:bg-slate-600">
-          Appointment Now
+          Appointment
         </button>
       </div>
     </div>

@@ -6,12 +6,14 @@ body{font-family:Roboto,sans-serif}
 .font-another{font-family:'Single Day',cursive}
 
 .active{
-    color: #177BFB;
-    text-decoration: underline;
+    color: #22B2D8;
+    background-color: white;
+    
 }
 .navLink{
     color: #272727;
 }
+
 .bg-primary{
     background-color: #22B2D8;
 }
