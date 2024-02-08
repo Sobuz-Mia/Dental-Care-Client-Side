@@ -4,3 +4,14 @@
 @import url(https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Single+Day&display=swap);
 body{font-family:Roboto,sans-serif}
 .font-another{font-family:'Single Day',cursive}
+
+.active{
+    color: #177BFB;
+    text-decoration: underline;
+}
+.navLink{
+    color: #272727;
+}
+.bg-primary{
+    background-color: #22B2D8;
+}

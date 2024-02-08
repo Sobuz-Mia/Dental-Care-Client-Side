@@ -7,25 +7,60 @@ const Navbar = () => {
   const links = (
     <>
       <li className="px-2">
-        <NavLink>Home</NavLink>
+        <NavLink
+          to={"/"}
+          className={(isActive) => (isActive ? "active" : "navLink")}
+        >
+          Home
+        </NavLink>
       </li>
       <li className="px-2">
-        <NavLink>Services</NavLink>
+        <NavLink
+          to={"/services"}
+          className={(isActive) => (isActive ? "active" : "navLink")}
+        >
+          Services
+        </NavLink>
       </li>
       <li className="px-2">
-        <NavLink>Pricing</NavLink>
+        <NavLink
+          to={"/pricing"}
+          className={(isActive) => (isActive ? "active" : "navLink")}
+        >
+          Pricing
+        </NavLink>
       </li>
       <li className="px-2">
-        <NavLink>Branch</NavLink>
+        <NavLink
+          to={"/branch"}
+          className={(isActive) => (isActive ? "active" : "navLink")}
+        >
+          Branch
+        </NavLink>
       </li>
       <li className="px-2">
-        <NavLink>Medicine</NavLink>
+        <NavLink
+          to={"/medicine"}
+          className={(isActive) => (isActive ? "active" : "navLink")}
+        >
+          Medicine
+        </NavLink>
       </li>
       <li className="px-2">
-        <NavLink>Blog</NavLink>
+        <NavLink
+          to={"/blog"}
+          className={(isActive) => (isActive ? "active" : "navLink")}
+        >
+          Blog
+        </NavLink>
       </li>
       <li className="px-2">
-        <NavLink>Contact Us</NavLink>
+        <NavLink
+          to={"/contact"}
+          className={(isActive) => (isActive ? "active" : "navLink")}
+        >
+          Contact Us
+        </NavLink>
       </li>
     </>
   );
@@ -75,13 +110,13 @@ const Navbar = () => {
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1 mr-5">{links}</ul>
       </div>
-      <div>
+      <div className="hidden md:flex">
         <GiSelfLove className="text-3xl -mr-4" />
         <div className="divider lg:divider-horizontal divider-neutral"></div>
         <IoSearchOutline className="text-3xl -ml-4" />
       </div>
       <div className="navbar-end">
-        <button className="btn bg-[#22B2D8] text-white hover:bg-slate-600">
+        <button className="btn bg-primary text-white hover:bg-slate-600">
           Appointment Now
         </button>
       </div>
