@@ -1,0 +1,22 @@
+[
+  {
+    "title": "Root Canal Treatment",
+    "description": "Root canal treatment is a procedure to repair and save a badly damaged or infected tooth. It involves removing the infected pulp, cleaning and disinfecting the inside of the tooth, and then sealing it to prevent further infection. Our experienced endodontists perform root canal therapy with precision and care, helping you preserve your natural teeth and alleviate pain.",
+    "image": "https://img.freepik.com/free-vector/dental-implants-anatomy-closeup-model_1284-15064.jpg?w=740&t=st=1707448168~exp=1707448768~hmac=c5ac298e0eb74c01149f97ce5cfbbe183e5edc5de2db08464bb266fdea001500"
+  },
+  {
+    "title": "Routine Checkup",
+    "description": "Regular dental checkups are essential for maintaining good oral health. During a routine checkup, our dentists will examine your teeth, gums, and mouth for any signs of problems such as tooth decay, gum disease, or oral cancer. Early detection of dental issues allows for prompt treatment and prevents more serious problems in the future.",
+    "image": "https://img.freepik.com/premium-photo/woman-undergoing-dental-checkup_868797-10318.jpg?w=1060"
+  },
+  {
+    "title": "Dental Filling",
+    "description": "Dental fillings are used to repair teeth that have been damaged by decay or trauma. Our dentists offer tooth-colored fillings made of composite resin, which blend seamlessly with your natural teeth for a more aesthetically pleasing result. With our gentle and precise technique, we restore the strength and function of your teeth while preserving their appearance.",
+    "image": "https://img.freepik.com/premium-photo/happy-woman-getting-dental-checkup-dentistry-dentist-using-dental-equipment-examination_763111-4036.jpg?w=740"
+  },
+  {
+    "title": "Teeth Whitening",
+    "description": "Brighten your smile with professional teeth whitening services. Our safe and effective whitening treatments can remove stubborn stains and discoloration caused by coffee, tea, tobacco, and aging. Whether you choose in-office whitening or take-home kits, our dental team will help you achieve a whiter, brighter smile that boosts your confidence.",
+    "image": "https://img.freepik.com/free-photo/happy-surprised-expression-dentist-clinic_1194-588427.jpg?t=st=1707448527~exp=1707452127~hmac=1f86be8be378986e7d7fff92c053d0afc591802262bb0fc292270e4d096786de&w=826"
+  }
+]
