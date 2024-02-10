@@ -1,0 +1,34 @@
+[
+  {
+    "id": 1,
+    "name": "John Doe",
+    "role": "Senior Manager",
+    "image": "https://img.freepik.com/free-photo/handsome-businesman-summer-city_1157-18984.jpg?w=826&t=st=1707567599~exp=1707568199~hmac=018b0cc43c6c15f86b085de09528f080a1aae88cda05bc39d12e477007d1ca74",
+    "feedback": "I had a wonderful experience at the dental clinic. The staff was friendly and professional, and the dentist provided excellent care. I highly recommend this clinic to anyone in need of dental services.",
+    "rating": 5
+  },
+  {
+    "id": 2,
+    "name": "Jane Smith",
+    "role": "Marketing Director",
+    "image": "https://img.freepik.com/free-photo/businessman_144627-34865.jpg?w=360&t=st=1707567649~exp=1707568249~hmac=fb45f1629b9f8cf2bd5cddf6b7cb61316f6b4cc4ba75fe355b93be881a77c609",
+    "feedback": "I've been coming to this dental clinic for years, and I've always been impressed by the quality of care I receive. The dentists are skilled and compassionate, and the office is clean and modern. I wouldn't trust my dental health to anyone else!",
+    "rating": 5
+  },
+  {
+    "id": 3,
+    "name": "Michael Johnson",
+    "role": "Teacher",
+    "image": "https://img.freepik.com/free-photo/elegant-businessman-office_155003-9641.jpg?size=626&ext=jpg&ga=GA1.1.1264094195.1703122551&semt=ais",
+    "feedback": "As someone who's always been anxious about visiting the dentist, I was pleasantly surprised by my experience at this clinic. The staff was understanding and reassuring, and the dentist was gentle and patient. I no longer dread going to the dentist thanks to this clinic!",
+    "rating": 4
+  },
+  {
+    "id": 4,
+    "name": "Emily Wilson",
+    "role": "Student",
+    "image": "https://img.freepik.com/free-photo/sonrisa-belleza-gente-alegria-chicas_1301-1166.jpg?w=360&t=st=1707567731~exp=1707568331~hmac=6d3169fe83f325813612f336dfe0a0d2c8482d13281f1283316f91a000eb2559",
+    "feedback": "I recently had my braces removed at this clinic, and I couldn't be happier with the results. The orthodontist did an amazing job, and my smile has never looked better. Thank you to the entire team for helping me achieve the smile of my dreams!",
+    "rating": 5
+  }
+]
