@@ -22,22 +22,6 @@ const Navbar = () => {
           Services
         </NavLink>
       </li>
-      <li className="px-2  text-md">
-        <NavLink
-          to={"/pricing"}
-          className={({ isActive }) => (isActive ? "text-[#22B2D8]" : "")}
-        >
-          Pricing
-        </NavLink>
-      </li>
-      <li className="px-2 text-md">
-        <NavLink
-          to={"/branch"}
-          className={({ isActive }) => (isActive ? "text-[#22B2D8]" : "")}
-        >
-          Branch
-        </NavLink>
-      </li>
       <li className="px-2 text-md">
         <NavLink
           to={"/medicine"}
@@ -60,6 +44,14 @@ const Navbar = () => {
           className={({ isActive }) => (isActive ? "text-[#22B2D8]" : "")}
         >
           Contact Us
+        </NavLink>
+      </li>
+      <li className="px-2 text-md">
+        <NavLink
+          to={"/login"}
+          className={({ isActive }) => (isActive ? "text-[#22B2D8]" : "")}
+        >
+          Login
         </NavLink>
       </li>
     </>
