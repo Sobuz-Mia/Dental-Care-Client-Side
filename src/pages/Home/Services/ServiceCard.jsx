@@ -1,5 +1,8 @@
+import Modal from "./Modal";
+
 const ServiceCard = ({ service }) => {
   const { title, image, description } = service;
+
   return (
     <div className="card bg-base-100 shadow-xl border hover:shadow-2xl transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-105">
       <div className="flex justify-center border border-[#22B2D8] rounded-full w-32 h-32 mx-auto mt-5">
@@ -11,10 +14,8 @@ const ServiceCard = ({ service }) => {
           {description?.length > 20
             ? `${description?.substring(0, 50)}...`
             : description}
+          <Modal {...service}/>
         </p>
-        <div className="card-actions">
-          <button className="btn btn-primary">Buy Now</button>
-        </div>
       </div>
     </div>
   );

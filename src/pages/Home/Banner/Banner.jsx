@@ -5,8 +5,8 @@ import logo from "../../../assets/2.png";
 import { MdOutlinePhoneInTalk } from "react-icons/md";
 const Banner = () => {
   return (
-    <div className="flex justify-center items-center gap-5 my-8">
-      <div className="w-1/2">
+    <div className="flex flex-col md:flex-row justify-center items-center gap-5 my-8">
+      <div className="md:w-1/2 p-2">
         <h2 className="text-6xl font-bold">
           Get Ready For Your Best Ever Dental Experience!
         </h2>
