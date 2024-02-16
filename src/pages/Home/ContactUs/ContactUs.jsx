@@ -2,7 +2,7 @@ import { FaLocationDot, FaPhone } from "react-icons/fa6";
 
 const ContactUs = () => {
   return (
-    <div className="bg-[#E5F6FE] flex justify-between p-10 rounded-lg my-3">
+    <div className="bg-[#E5F6FE] flex justify-between p-10 rounded-lg my-3 md:flex-row flex-col">
       <div>
         <h2 className="text-5xl font-bold mb-4">Contact With Us</h2>
         <p className="text-[#4D5664] w-fit">
@@ -24,7 +24,7 @@ const ContactUs = () => {
       <div>
         <form className="card-body">
           <div className="flex gap-5">
-            <div className="form-control">
+            <div className="form-control md:w-full w-1/2">
               <label className="label">
                 <span className="label-text">Name:</span>
               </label>
@@ -35,7 +35,7 @@ const ContactUs = () => {
                 required
               />
             </div>
-            <div className="form-control">
+            <div className="form-control md:w-full w-1/2">
               <label className="label">
                 <span className="label-text">Email:</span>
               </label>
@@ -48,7 +48,7 @@ const ContactUs = () => {
             </div>
           </div>
           <div className="flex gap-5">
-            <div className="form-control">
+            <div className="form-control md:w-full w-1/2">
               <label className="label">
                 <span className="label-text">Mobile Numbers:</span>
               </label>
@@ -59,7 +59,7 @@ const ContactUs = () => {
                 required
               />
             </div>
-            <div className="form-control">
+            <div className="form-control md:w-full w-1/2">
               <label className="label">
                 <span className="label-text">Doctors Name:</span>
               </label>
@@ -72,7 +72,7 @@ const ContactUs = () => {
             </div>
           </div>
           <div className="flex gap-5">
-            <div className="form-control w-full">
+            <div className="form-control md:w-full w-1/2">
               <label className="label">
                 <span className="label-text">Date:</span>
               </label>
@@ -83,7 +83,7 @@ const ContactUs = () => {
                 required
               />
             </div>
-            <div className="form-control w-full">
+            <div className="form-control md:w-full w-1/2">
               <label className="label">
                 <span className="label-text">Time:</span>
               </label>

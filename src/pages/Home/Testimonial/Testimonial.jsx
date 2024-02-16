@@ -20,34 +20,74 @@ const Testimonial = () => {
       </div>
       <div>
         <Swiper
-          slidesPerView={2}
-          spaceBetween={30}
+          slidesPerView={1}
+          spaceBetween={10}
           loop={true}
           pagination={{
             clickable: true,
           }}
+          breakpoints={{
+            1024: {
+              slidesPerView: 2,
+              spaceBetween: 10,
+            },
+          }}
+          mod
           navigation={true}
           modules={[Pagination, Navigation]}
           className="mySwiper"
         >
           {testimonialData?.map((data) => (
-            <SwiperSlide key={data.id} className=" shadow-lg rounded-lg p-12 shadow-[#9FC8FE] mb-5">
-              <p className=" text-[#ACB5BB] flex gap-1 h-32"><FaQuoteLeft className="text-9xl font-bold -mt-14 text-[#D4E4FD]"/>{data.feedback}</p>
+            <SwiperSlide
+              key={data.id}
+              className=" shadow-lg rounded-lg p-12 shadow-[#9FC8FE] mb-5"
+            >
+              <p className=" text-[#ACB5BB] flex gap-1 h-32">
+                <FaQuoteLeft className="text-9xl font-bold -mt-14 text-[#D4E4FD]" />
+                {data.feedback}
+              </p>
               <div className="flex justify-between items-center">
                 <div className="flex items-center gap-5">
-                  <img className="w-24 h-24 rounded-full" src={data?.image} alt="" />
+                  <img
+                    className="w-24 h-24 rounded-full"
+                    src={data?.image}
+                    alt=""
+                  />
                   <p>
                     <h2 className="text-3xl font-bold">{data?.name}</h2>
-                    <span className="text-[#1970DC] text-lg font-medium">{data?.role}</span>
+                    <span className="text-[#1970DC] text-lg font-medium">
+                      {data?.role}
+                    </span>
                   </p>
                 </div>
                 <div className="rating rating-md">
-                  <input type="radio" name="rating-7" className="mask mask-star-2 bg-orange-400" />
-                  <input type="radio" name="rating-7" className="mask mask-star-2 bg-orange-400" />
-                  <input type="radio" name="rating-7" className="mask mask-star-2 bg-orange-400" />
-                  <input type="radio" name="rating-7" className="mask mask-star-2 bg-orange-400" />
-                  <input type="radio" name="rating-7" className="mask mask-star-2 bg-orange-400" checked />
-               </div>
+                  <input
+                    type="radio"
+                    name="rating-7"
+                    className="mask mask-star-2 bg-orange-400"
+                  />
+                  <input
+                    type="radio"
+                    name="rating-7"
+                    className="mask mask-star-2 bg-orange-400"
+                  />
+                  <input
+                    type="radio"
+                    name="rating-7"
+                    className="mask mask-star-2 bg-orange-400"
+                  />
+                  <input
+                    type="radio"
+                    name="rating-7"
+                    className="mask mask-star-2 bg-orange-400"
+                  />
+                  <input
+                    type="radio"
+                    name="rating-7"
+                    className="mask mask-star-2 bg-orange-400"
+                    checked
+                  />
+                </div>
               </div>
             </SwiperSlide>
           ))}

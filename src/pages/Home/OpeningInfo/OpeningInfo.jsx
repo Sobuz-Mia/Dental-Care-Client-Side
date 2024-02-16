@@ -2,7 +2,7 @@ import {  FaRegClock } from "react-icons/fa";
 import { FaLocationDot, FaPhone } from 'react-icons/fa6';
 const OpeningInfo = () => {
   return (
-    <div className="mt-10 flex justify-around">
+    <div className="mt-10 flex gap-5 md:justify-between md:flex-row flex-col items-center ">
       <div className="flex max-w-fit shadow-lg p-10 gap-3 rounded-lg bg-[#E8F7FC]">
         <FaRegClock className="text-4xl primary-color" />
         <div>

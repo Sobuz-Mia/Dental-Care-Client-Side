@@ -5,7 +5,7 @@ import dentalLogo from '../../../assets/logo-1.jpg'
 const Footer = () => {
   return (
     <footer className=" bg-[#F7FCFF] my-5 p-10">
-      <div className="footer text-base-content">
+      <div className="footer text-base-content grid md:grid-cols-5 grid-cols-2 gap-20 md:gap-0">
         <aside>
           <img src={dentalLogo}alt="" className="w-24" />
           <p className="font-bold -mt-2">

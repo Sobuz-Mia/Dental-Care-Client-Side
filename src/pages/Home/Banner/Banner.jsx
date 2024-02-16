@@ -15,7 +15,7 @@ const Banner = () => {
           provide the best products to our patients, So do not worry about
           anything and book yourself.
         </p>
-        <div className="flex justify-around items-center -ml-12">
+        <div className="flex justify-around items-center -ml-12 flex-col md:flex-row gap-5 md:gap-0">
           <button className="btn bg-primary text-white">
             Book Appointment
           </button>
