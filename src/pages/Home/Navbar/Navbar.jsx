@@ -84,7 +84,7 @@ const Navbar = () => {
           </ul>
         </div>
         <div className="text-center flex md:flex-col flex-row justify-center items-center">
-          <img src={logo1} className="w-24 h-20" alt="" />
+          <img src={logo1} className="w-12 h-12" alt="" />
           <p className="text-sm flex flex-col italic font-bold -mt-2 font-another">
             {/* <Typewriter
               words={["Musa Dental Care"]}
