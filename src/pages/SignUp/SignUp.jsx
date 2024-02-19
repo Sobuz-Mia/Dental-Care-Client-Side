@@ -3,15 +3,41 @@ import { useForm } from "react-hook-form";
 import { FaEye } from "react-icons/fa6";
 import signUp from "../../assets/SignUp.png";
 import { Link } from "react-router-dom";
+import useAxiosPublic from "../../hooks/useAxiosPublic";
+const imgBB_api_key = import.meta.env.VITE_IMGBB_API_KEY
+const img_hosting_api = `https://api.imgbb.com/1/upload?key=${imgBB_api_key}`
+
 const SignUp = () => {
   const [open, setOpen] = useState("password");
+  const axiosPublic = useAxiosPublic();
   // toggle password visibility function
   const togglePassword = () => {
     setOpen((pass) => (pass === "password" ? "text" : "password"));
   };
 
+
   const { register, handleSubmit } = useForm();
-  const onSubmit = (data) => console.log(data);
+  const onSubmit = async(data) => {
+    // img upload in imgbb and get url
+    const imageFile = {image:data.image[0]};
+    const res = await axiosPublic.post(img_hosting_api,imageFile,{
+      headers:{
+        "Content-Type":"multipart/form-data"
+      }
+    })
+    if(res?.data?.success){
+     const userInfo = {
+        name: data.name,
+        email:data.email,
+        password:data.pass,
+        img: res?.data?.data?.display_url
+      }
+      console.log(userInfo)
+    }
+    console.log(data)
+
+    
+  };
 
   return (
     <div className="hero min-h-screen bg-[#E8F7FA] rounded-lg">
@@ -58,6 +84,7 @@ const SignUp = () => {
               </div>
               <input
                 type="file"
+                {...register("image")}
                 className="file-input file-input-bordered w-full max-w-xs"
               />
             </label>
