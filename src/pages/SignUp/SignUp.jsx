@@ -4,39 +4,49 @@ import { FaEye } from "react-icons/fa6";
 import signUp from "../../assets/SignUp.png";
 import { Link } from "react-router-dom";
 import useAxiosPublic from "../../hooks/useAxiosPublic";
-const imgBB_api_key = import.meta.env.VITE_IMGBB_API_KEY
-const img_hosting_api = `https://api.imgbb.com/1/upload?key=${imgBB_api_key}`
+import useAuth from "../../hooks/useAuth";
+import toast from "react-hot-toast";
+const imgBB_api_key = import.meta.env.VITE_IMGBB_API_KEY;
+const img_hosting_api = `https://api.imgbb.com/1/upload?key=${imgBB_api_key}`;
 
 const SignUp = () => {
   const [open, setOpen] = useState("password");
   const axiosPublic = useAxiosPublic();
+  const { createUserWithEmail, updateUser } = useAuth();
+  // console.log(user);
   // toggle password visibility function
   const togglePassword = () => {
     setOpen((pass) => (pass === "password" ? "text" : "password"));
   };
 
-
-  const { register, handleSubmit } = useForm();
-  const onSubmit = async(data) => {
+  const { register, handleSubmit, reset } = useForm();
+  const onSubmit = async (data) => {
     // img upload in imgbb and get url
-    const imageFile = {image:data.image[0]};
-    const res = await axiosPublic.post(img_hosting_api,imageFile,{
-      headers:{
-        "Content-Type":"multipart/form-data"
-      }
-    })
-    if(res?.data?.success){
-     const userInfo = {
+    const imageFile = { image: data.image[0] };
+    const res = await axiosPublic.post(img_hosting_api, imageFile, {
+      headers: {
+        "Content-Type": "multipart/form-data",
+      },
+    });
+    if (res?.data?.success) {
+      const userInfo = {
         name: data.name,
-        email:data.email,
-        password:data.pass,
-        img: res?.data?.data?.display_url
-      }
-      console.log(userInfo)
+        email: data.email,
+        password: data.pass,
+        img: res?.data?.data?.display_url,
+      };
+      createUserWithEmail(userInfo?.email, userInfo?.password)
+        .then(() => {
+          updateUser(userInfo?.name, userInfo?.img).then(() => {
+            reset();
+            toast.success("Account Created Successfully!");
+          });
+        })
+        .catch(() => {
+          toast.error("Email already exist! Try another Email");
+        });
     }
-    console.log(data)
-
-    
+    console.log(data);
   };
 
   return (
@@ -53,6 +63,7 @@ const SignUp = () => {
             <div className="form-control">
               <label className="font-bold">Name:</label>
               <input
+                defaultValue=""
                 {...register("name")}
                 placeholder="your name"
                 className="input input-bordered"
@@ -61,6 +72,7 @@ const SignUp = () => {
             <div className="form-control">
               <label className="font-bold">Email:</label>
               <input
+                defaultValue=""
                 {...register("email")}
                 placeholder="your email"
                 type="email"
@@ -71,6 +83,7 @@ const SignUp = () => {
               <label className="font-bold">Password:</label>
               <p className="input input-bordered flex items-center justify-between">
                 <input
+                  defaultValue=""
                   {...register("pass")}
                   type={open}
                   placeholder="your password"
@@ -83,6 +96,7 @@ const SignUp = () => {
                 <span className="font-bold">Pick profile image</span>
               </div>
               <input
+                defaultValue=""
                 type="file"
                 {...register("image")}
                 className="file-input file-input-bordered w-full max-w-xs"
@@ -94,7 +108,10 @@ const SignUp = () => {
               </button>
               <p className="mt-6 text-center">
                 If already have an account-
-                <Link to={'/login'} className="underline text-2xl font-bold primary-color ml-2">
+                <Link
+                  to={"/login"}
+                  className="underline text-2xl font-bold primary-color ml-2"
+                >
                   Login
                 </Link>
               </p>

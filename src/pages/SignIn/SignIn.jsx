@@ -3,15 +3,29 @@ import { useForm } from "react-hook-form";
 import { FaEye } from "react-icons/fa6";
 import signUp from "../../assets/SignUp.png";
 import { Link } from "react-router-dom";
+import useAuth from "../../hooks/useAuth";
+import toast from "react-hot-toast";
 const SignIn = () => {
   const [open, setOpen] = useState("password");
+  const { signInUser } = useAuth();
   // toggle password visibility function
   const togglePassword = () => {
     setOpen((pass) => (pass === "password" ? "text" : "password"));
   };
 
-  const { register, handleSubmit } = useForm();
-  const onSubmit = (data) => console.log(data);
+  const { register, handleSubmit, reset } = useForm();
+  const onSubmit = (data) => {
+    const email = data?.email;
+    const password = data?.pass;
+    signInUser(email, password)
+      .then(() => {
+        reset();
+        toast.success("Log in successfully");
+      })
+      .catch(() => {
+        toast.error("Invalid Email/Password!");
+      });
+  };
 
   return (
     <div>
@@ -23,7 +37,9 @@ const SignIn = () => {
           <div className="card shrink-0 w-full max-w-sm border border-[#1970DC]">
             <form className="card-body" onSubmit={handleSubmit(onSubmit)}>
               <div className="text-center">
-                <p className="text-3xl font-semibold primary-color my-4">Login Account</p>
+                <p className="text-3xl font-semibold primary-color my-4">
+                  Login Account
+                </p>
               </div>
               <div className="form-control">
                 <label className="font-bold">Email:</label>
@@ -51,7 +67,10 @@ const SignIn = () => {
                 </button>
                 <p className="mt-6 text-center">
                   Do not have an account-
-                  <Link to={'/signUp'} className="underline text-2xl font-bold primary-color ml-2">
+                  <Link
+                    to={"/signUp"}
+                    className="underline text-2xl font-bold primary-color ml-2"
+                  >
                     SignUp
                   </Link>
                 </p>

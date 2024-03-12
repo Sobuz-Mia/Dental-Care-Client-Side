@@ -2,8 +2,18 @@ import { NavLink } from "react-router-dom";
 import logo1 from "../../../assets/logo-1.jpg";
 import { GiSelfLove } from "react-icons/gi";
 import { IoSearchOutline } from "react-icons/io5";
+import useAuth from "../../../hooks/useAuth";
 // import { Typewriter } from "react-simple-typewriter";
 const Navbar = () => {
+  const { user } = useAuth();
+  
+  // logout function here
+
+  const handleLogOut = () =>{
+
+  }
+
+  // Navbar links here
   const links = (
     <>
       <li className="px-2 text-md">
@@ -46,14 +56,18 @@ const Navbar = () => {
           Contact Us
         </NavLink>
       </li>
-      <li className="px-2 text-md">
-        <NavLink
-          to={"/login"}
-          className={({ isActive }) => (isActive ? "text-[#22B2D8]" : "")}
-        >
-          Login
-        </NavLink>
-      </li>
+      {user ? (
+        ""
+      ) : (
+        <li className="px-2 text-md">
+          <NavLink
+            to={"/login"}
+            className={({ isActive }) => (isActive ? "text-[#22B2D8]" : "")}
+          >
+            Login
+          </NavLink>
+        </li>
+      )}
     </>
   );
   return (
@@ -108,10 +122,50 @@ const Navbar = () => {
         <div className="divider lg:divider-horizontal divider-neutral"></div>
         <IoSearchOutline className="text-3xl -ml-4" />
       </div>
-      <div className="navbar-end">
-        <button className="btn bg-primary text-white hover:bg-slate-600">
+      <div className="navbar-end justify-between">
+        <button className="btn bg-primary text-white hover:bg-slate-600 ml-4">
           Appointment
         </button>
+        {/* user info */}
+        {user && (
+          <div className="dropdown dropdown-end">
+            <div
+              tabIndex={0}
+              role="button"
+              className="btn btn-circle avatar w-16 h-16"
+            >
+              <div className="w-14 rounded-full">
+                {user && (
+                  <img
+                    alt="Tailwind CSS Navbar component"
+                    src={
+                      user
+                        ? user?.photoURL
+                        : "https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"
+                    }
+                  />
+                )}
+              </div>
+            </div>
+            <ul
+              // tabIndex={0}
+              className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+            >
+              <li>
+                <a className="justify-between">
+                  Profile
+                  <span className="badge">New</span>
+                </a>
+              </li>
+              <li>
+                <a>Settings</a>
+              </li>
+              <li>
+                <button onClick={handleLogOut}>Logout</button>
+              </li>
+            </ul>
+          </div>
+        )}
       </div>
     </div>
   );

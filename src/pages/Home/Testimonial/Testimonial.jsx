@@ -11,7 +11,6 @@ const Testimonial = () => {
   useEffect(() => {
     axios.get("/testimonial.json").then((res) => setTestimonialData(res?.data));
   }, []);
-  console.log(testimonialData);
   return (
     <div>
       <div className="my-10 text-center">
@@ -23,6 +22,7 @@ const Testimonial = () => {
           slidesPerView={1}
           spaceBetween={10}
           loop={true}
+          checked={true}
           pagination={{
             clickable: true,
           }}

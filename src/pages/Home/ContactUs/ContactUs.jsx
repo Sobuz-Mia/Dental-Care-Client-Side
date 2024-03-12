@@ -1,6 +1,9 @@
 import { FaLocationDot, FaPhone } from "react-icons/fa6";
 
 const ContactUs = () => {
+  const handleSubmit = e =>{
+    e.target.preventDefault
+  }
   return (
     <div className="bg-[#E5F6FE] flex justify-between p-10 rounded-lg my-3 md:flex-row flex-col">
       <div>
@@ -22,7 +25,7 @@ const ContactUs = () => {
         </p>
       </div>
       <div>
-        <form className="card-body">
+        <form className="card-body" onSubmit={(e)=>handleSubmit(e)}>
           <div className="flex gap-5">
             <div className="form-control md:w-full w-1/2">
               <label className="label">
