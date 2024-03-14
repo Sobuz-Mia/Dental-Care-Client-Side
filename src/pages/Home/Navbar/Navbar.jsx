@@ -3,14 +3,17 @@ import logo1 from "../../../assets/logo-1.jpg";
 import { GiSelfLove } from "react-icons/gi";
 import { IoSearchOutline } from "react-icons/io5";
 import useAuth from "../../../hooks/useAuth";
+import toast from "react-hot-toast";
 // import { Typewriter } from "react-simple-typewriter";
 const Navbar = () => {
-  const { user } = useAuth();
+  const { user,logOut } = useAuth();
   
   // logout function here
 
   const handleLogOut = () =>{
-
+    logOut().then(()=>{
+      toast.success("Sign-Out Successfully")
+    })
   }
 
   // Navbar links here
