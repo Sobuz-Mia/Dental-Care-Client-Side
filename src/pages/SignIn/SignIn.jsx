@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useForm } from "react-hook-form";
-import { FaEye } from "react-icons/fa6";
+import { FaEye} from "react-icons/fa6";
+import { FcGoogle } from "react-icons/fc";
 import signUp from "../../assets/SignUp.png";
 import { Link } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
@@ -62,9 +63,11 @@ const SignIn = () => {
                 </p>
               </div>
               <div className="form-control mt-6">
-                <button className="btn bg-primary text-white hover:bg-slate-600">
+                <button className="btn bg-primary text-white hover:bg-slate-600 mb-4">
                   Login
                 </button>
+                <div className="divider divider-accent text-xl font-bold">OR</div>
+                <button className="flex items-center gap-2 justify-center text-lg border rounded-lg border-[#22B2D8] py-3"> <FcGoogle className="text-2xl"/>Continue With Google </button>
                 <p className="mt-6 text-center">
                   Do not have an account-
                   <Link
